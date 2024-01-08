@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS file -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-5">Update Task</h1>
+
+    <!-- Task Form -->
+    <form action="/tasks/update/{id}" method="post" class="mt-4" th:object="${task}">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" class="form-control" th:field="*{title}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="form-control" th:field="*{description}"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Task</button>
+        <!-- Link to Task List -->
+        <a th:href="@{/tasks}" class="btn btn-secondary">Back to Task List</a>
+    </form>
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

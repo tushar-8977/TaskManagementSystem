@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Task Confirmation</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS file -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-5">Delete Task Confirmation</h1>
+
+    <!-- Task Deletion Confirmation -->
+    <p class="mt-4">Are you sure you want to delete this task?</p>
+    
+    <!-- Form to Confirm or Cancel -->
+    <form action="/tasks/delete/{id}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a th:href="@{/tasks}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
